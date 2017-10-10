@@ -2,10 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import socket
+import xmlrpclib
 
-sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-port = 1235
-conn = sock.connect(('127.0.0.1', port))
-sock.send('Consumir 0')
-res = sock.recv(1024)
-print 'resposta: ' + res
+proxy = xmlrpclib.ServerProxy("http://localhost:1235/")
+proxy.consumir()
