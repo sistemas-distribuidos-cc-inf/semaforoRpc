@@ -14,6 +14,7 @@ print "Server conectado a porta 1235..."
 def produzir(item):
     b.insert(item)
     print "PRODUTOR. item: ", item , " b.livre: ", b.livre, " b.cheio: ", b.cheio
+    return xmlrpclib.Binary(str(item))
 
 def consumir():
     item = b.remove()
