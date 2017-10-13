@@ -8,4 +8,5 @@ proxy = xmlrpclib.ServerProxy("http://localhost:1235/")
 print "Consumidor conectado a porta 1235..."
 print proxy
 
-proxy.consumir().data
+res = proxy.consumir().data
+print res

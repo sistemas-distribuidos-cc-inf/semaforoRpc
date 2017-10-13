@@ -18,7 +18,7 @@ def produzir(item):
 def consumir():
     item = b.remove()
     print " CONSUMIDOR. item: ", item , " b.livre: ", b.livre, " b.cheio: ",  b.cheio
-    return xmlrpclib.Binary(item)
+    return xmlrpclib.Binary(str(item))
 
 server.register_function(produzir, "produzir")
 server.register_function(consumir, "consumir")
